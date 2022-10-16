@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'YH';
+  src: local('microsoft yahei');
+}
+
+@font-face {
+  font-family: 'BASE';
+  src: local('PingFang SC'), local('Microsoft Yahei');
+}

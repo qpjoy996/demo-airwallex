@@ -1,0 +1,75 @@
+.qp-modal {
+  position: fixed;
+  opacity: 0;
+  pointer-events: all;
+  transition: opacity 0.4s ease-in-out;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  z-index: -1;
+}
+.qp-modal-showing {
+  // display: none;
+  opacity: 1;
+  pointer-events: unset;
+  z-index: 9999;
+}
+
+.qp-modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: rem2px(115);
+  padding: 0 rem2px(30);
+}
+
+.qp-modal-tour {
+  position: fixed;
+  right: rem2px(15);
+  top: rem2px(15);
+  max-height: rem2px(80);
+  max-width: rem2px(150);
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.qp-modal-confirm {
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.qp-modal-title {
+  padding: rem2px(20) rem2px(24);
+  font-size: rem2px(16);
+  font-weight: 400;
+  color: #15171a;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.qp-modal-btns {
+  display: flex;
+  align-items: center;
+  padding: rem2px(20);
+  font-size: rem2px(16);
+  span {
+    color: rgba(0, 0, 0, 0.05);
+  }
+}
+.qp-modal-btn {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  color: #ea4359;
+}
