@@ -1,0 +1,40 @@
+@import 'styles/function';
+.invite-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: rem2px(300);
+    width: rem2px(240);
+    padding: rem2px(30) rem2px(24);
+    background-color: #fff;
+    border: 5PX solid #ccc;
+    &-header {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 rem2px(6);
+        font-size: rem2px(14);
+        font-style: italic;
+    }
+    &-underline {
+        width: rem2px(24);
+        border-bottom: 1px solid #000;
+    }
+    &-body {
+        width: 100%;
+        input {
+            height: rem2px(24);
+            line-height: 0;
+            text-indent: rem2px(10);
+        }
+    }
+    input::-webkit-input-placeholder {
+        height: rem2px(24);
+        line-height: rem2px(24);
+        color: #bbb;
+        font-size: rem2px(10);
+    }
+    input::-ms-input-placeholder {
+        color: #bbb;
+        font-size: rem2px(10);
+    }
+}

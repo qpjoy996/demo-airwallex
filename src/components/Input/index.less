@@ -1,0 +1,115 @@
+// @import "../../../styles/className.less";
+
+.editron-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  .editron-body1.light();
+
+  border-radius: 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: var(--light5);
+  color: var(--text1);
+  border: 1px solid transparent;
+  transition: 0.2s all;
+
+  &.editron-input-inline {
+    display: inline-flex;
+  }
+
+  &.editron-input-large {
+    .editron-body1.light();
+
+    height: 36px;
+  }
+
+  &.editron-input-small {
+    .editron-body2.light();
+
+    height: 26px;
+    border-radius: 4px;
+  }
+
+  &.editron-input-focus {
+    background-color: var(--a4);
+    border: 1px solid var(--main3);
+    box-shadow: inset 1px 2px 3px rgb(20 20 23 / 15%);
+
+    &:hover {
+      background-color: var(--a4);
+    }
+  }
+
+  &:hover {
+    background-color: var(--light4);
+  }
+
+  &.disabled {
+    background-color: var(--text5);
+    color: var(--text4);
+
+    input {
+      cursor: not-allowed;
+    }
+
+    .editron-input-prefix,
+    .editron-input-suffix {
+      color: var(--light4);
+    }
+  }
+
+  input {
+    box-sizing: border-box;
+    padding: 4px 12px;
+    min-width: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-overflow: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    text-align: right;
+    color: inherit;
+    transition: 0.1s all;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  &-wrapper {
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-overflow: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  &-prefix,
+  &-suffix {
+    display: inline-flex;
+    color: inherit;
+    color: var(--light2);
+  }
+
+  &-prefix {
+    margin-left: 12px;
+    margin-right: 2px;
+  }
+
+  &-suffix {
+    margin-right: 6px;
+  }
+
+  .i-icon {
+    display: flex;
+  }
+}

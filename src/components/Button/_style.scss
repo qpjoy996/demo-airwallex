@@ -37,12 +37,20 @@
     $btn-border-radius-lg
   );
 }
+.btn-md {
+  @include button-size(
+    $btn-padding-y-sm / 3,
+    $btn-padding-x-sm / 3,
+    $btn-font-size-sm / 3,
+    $btn-border-radius-sm / 3
+  );
+}
 .btn-sm {
   @include button-size(
-    $btn-padding-y-sm,
-    $btn-padding-x-sm,
-    $btn-font-size-sm,
-    $btn-border-radius-sm
+    $btn-padding-y-sm / 4,
+    $btn-padding-x-sm / 4,
+    $btn-font-size-sm / 4,
+    $btn-border-radius-sm / 4
   );
 }
 

@@ -8,3 +8,10 @@ declare global {
     webkitHidden: any
   }
 }
+
+export type UISize = 'default' | 'small' | 'large'
+export type Overwrite<T, U> = Pick<
+  T,
+  Exclude<keyof T, keyof U>
+> &
+  U

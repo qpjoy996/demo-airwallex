@@ -1,3 +1,7 @@
+# usage
+
+- yarn && yarn start
+
 # 1. Install Project
 
 - npm i create-react-app -g

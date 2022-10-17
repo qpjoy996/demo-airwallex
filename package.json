@@ -15,6 +15,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "apollo-link-rest": "^0.9.0-rc.1",
+    "autoprefixer": "^10.4.12",
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
@@ -43,7 +44,7 @@
     "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.4.5",
-    "postcss": "^8.4.4",
+    "postcss": "^8.4.18",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-normalize": "^10.0.1",
@@ -63,7 +64,7 @@
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
-    "tailwindcss": "^3.0.2",
+    "tailwindcss": "^3.1.8",
     "terser-webpack-plugin": "^5.2.5",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0",
@@ -102,10 +103,7 @@
     "development": [
       ">0.2%",
       "not dead",
-      "not op_mini all",
-      "-last 1 chrome version",
-      "-last 1 firefox version",
-      "-last 1 safari version"
+      "not op_mini all"
     ]
   },
   "jest": {
@@ -163,5 +161,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "postcss-pxtorem": "^6.0.0"
   }
 }

@@ -3,41 +3,113 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
     <meta
-      name="description"
-      content="Web site created using create-react-app"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="BROCCOLI & CO." />
+    <link
+      rel="manifest"
+      href="%PUBLIC_URL%/manifest.json"
+    />
+    <!-- PX to Rem -->
+    <script>
+      ;(function flexible(window, document) {
+        let docEl = document.documentElement
+        let dpr = window.devicePixelRatio || 1
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+        // adjust body font size
+        function setBodyFontSize() {
+          if (document.body) {
+            console.log(12 * dpr, ' - - -this is body')
+            document.body.style.fontSize = `${12 * dpr}px`
+          } else {
+            document.addEventListener(
+              'DOMContentLoaded',
+              setBodyFontSize
+            )
+          }
+        }
+
+        setBodyFontSize()
+
+        // set 1rem = viewWidth / 11
+        function setRemUnit() {
+          // var rem = docEl.clientWidth / 10
+          // docEl.style.fontSize = rem + 'px'
+
+          let h = Math.max(
+            document.documentElement.clientHeight,
+            window.innerHeight || 0
+          )
+          let w = Math.max(
+            document.documentElement.clientWidth,
+            window.innerWidth || 0
+          )
+          let width = w > h ? h : w
+
+          width = width > 720 ? 720 : width
+          let fz = ~~((width * 100000) / 98) / 10000
+
+          document.getElementsByTagName(
+            'html'
+          )[0].style.cssText = `font-size: ${fz}px`
+          let realfz =
+            ~~(
+              Number(
+                window
+                  .getComputedStyle(
+                    document.getElementsByTagName('html')[0]
+                  )
+                  .fontSize.replace('px', '')
+              ) * 10000
+            ) / 10000
+
+          if (fz !== realfz) {
+            document.getElementsByTagName(
+              'html'
+            )[0].style.cssText = `font-size: ${
+              fz * (fz / realfz)
+            }px`
+          }
+        }
+
+        setRemUnit()
+
+        // reset rem unit on page resize
+        window.addEventListener('resize', setRemUnit)
+        window.addEventListener('pageshow', function (e) {
+          if (e.persisted) {
+            setRemUnit()
+          }
+        })
+
+        // detect 0.5px supports
+        if (dpr >= 2) {
+          let fakeBody = document.createElement('body')
+          let testElement = document.createElement('div')
+
+          testElement.style.border =
+            '.5px solid transparent'
+          fakeBody.appendChild(testElement)
+          docEl.appendChild(fakeBody)
+
+          if (testElement.offsetHeight === 1) {
+            docEl.classList.add('hairlines')
+          }
+
+          docEl.removeChild(fakeBody)
+        }
+      })(window, document)
+    </script>
+    <title>BROCCOLI & CO.</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript
+      >You need to enable JavaScript to run this
+      app.</noscript
+    >
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

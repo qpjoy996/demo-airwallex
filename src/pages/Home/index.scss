@@ -1,21 +1,24 @@
+@import 'styles/function';
 .home {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100vh;
-    border: 1px solid #000;
+    border: 1PX solid #000;
     .nav {
         display: flex;
         width: 100%;
         align-items: center;
-        height: 80px;
-        padding-left: 4em;
-        font-size: 18px;
+        height: rem2px(50);
+        padding-left: 2em;
+        font-size: rem2px(18);
         font-weight: 500;
-        border-bottom: 1px solid #000;
+        border-bottom: 1PX solid #000;
     }
     .container {
         display: flex;
         height: 100%;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -25,27 +28,26 @@
             line-height: 1;
             flex-direction: column;
             font-weight: bold;
-            font-size: 24px;
-            letter-spacing: 2px;
+            font-size: rem2px(24);
+            letter-spacing: 2PX;
         }
         .desc {
-            margin: 20px 0 10px;
+            margin: rem2px(20) 0 rem2px(10);
             font-weight: 400;
-            font-size: 12px;
+            font-size: rem2px(12);
         }
     }
     .footer {
         display: flex;
         justify-content: center;
-        height: 100px;
+        height: rem2px(100);
         flex-direction: column;
         align-items: center;
         width: 100%;
         align-self: center;
         margin-top: auto;
         font-weight: 400;
-        font-size: 12px;
-        border-top: 1px solid #000;
-        
+        font-size: rem2px(12);
+        border-top: 1PX solid #000;
     }
 }
