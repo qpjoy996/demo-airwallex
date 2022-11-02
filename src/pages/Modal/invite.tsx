@@ -118,7 +118,7 @@ function Invite() {
       <div className="invite-form-header">
         Request an invite
       </div>
-      <div className="invite-form-underline mb-[60px]"></div>
+      <div className="invite-form-underline mb-[50px]"></div>
       <div className="invite-form-body">
         <div className="w-full relative mb-[40px]">
           <Input
@@ -171,7 +171,7 @@ function Invite() {
       </div>
 
       <Button
-        className="w-full mt-[60px]"
+        className="w-full mt-[40px]"
         size="md"
         onClick={sendUser}
         disabled={isSending}
