@@ -191,10 +191,10 @@ export function Input(props: InputProps) {
   )
 
   const cls = classnames([
-    'editron-input',
-    { 'editron-input-inline': inline },
-    { 'editron-input-focus': focus },
-    { [`editron-input-${size}`]: size },
+    'airewallex-input',
+    { 'airewallex-input-inline': inline },
+    { 'airewallex-input-focus': focus },
+    { [`airewallex-input-${size}`]: size },
     { disabled },
     className
   ])
@@ -202,15 +202,15 @@ export function Input(props: InputProps) {
   return (
     <div className={cls} style={style}>
       {type === 'search' && !prefix ? (
-        <div className="editron-input-prefix">
+        <div className="airewallex-input-prefix">
           {/* <Icon type="search" className="icon-search " standard={false} /> */}
         </div>
       ) : prefix ? (
-        <div className="editron-input-prefix ">
+        <div className="airewallex-input-prefix ">
           {prefix}
         </div>
       ) : null}
-      <div className="editron-input-wrapper">
+      <div className="airewallex-input-wrapper">
         <input
           ref={inputRef}
           value={innerValue}
@@ -236,7 +236,9 @@ export function Input(props: InputProps) {
         />
       </div>
       {suffix && (
-        <div className="editron-input-suffix">{suffix}</div>
+        <div className="airewallex-input-suffix">
+          {suffix}
+        </div>
       )}
     </div>
   )
